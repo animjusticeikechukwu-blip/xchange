@@ -531,8 +531,8 @@ const LandingPage = () => {
 
       {/* Testimonials */}
       <section id="testimonials" className="bg-muted/30 border-y border-border">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
-          <div className="text-center mb-12">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Trusted by Facilities Across Nigeria</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
