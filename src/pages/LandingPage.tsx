@@ -117,6 +117,46 @@ const features = [
 ];
 ];
 
+      {/* FAQs */}
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-8"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">Frequently Asked Questions</h2>
+          <p className="text-muted-foreground mt-2 max-w-lg mx-auto">Everything you need to know about Xchange.</p>
+        </motion.div>
+        <div className="max-w-3xl mx-auto space-y-3">
+          {[
+            { q: "Who can use Xchange?", a: "Xchange is exclusively for licensed healthcare facilities in Nigeria — community pharmacies, private hospitals, public hospitals, and clinics with valid PCN registration." },
+            { q: "How does pricing work for near-expiry medicines?", a: "Sellers set discounted prices based on remaining shelf life. Medicines closer to expiry are typically priced lower, giving buyers significant savings while sellers recover value from stock they'd otherwise lose." },
+            { q: "Is it legal to resell medicines before they expire?", a: "Yes. Nigerian pharmaceutical regulations allow licensed facilities to transfer medicines to other licensed facilities before expiry, provided all storage and handling requirements are met." },
+            { q: "How does Xchange verify facilities?", a: "Every facility must provide their PCN license number during registration. We verify all licenses against regulatory databases before activating accounts on the platform." },
+            { q: "What happens if a medicine expires before delivery?", a: "Xchange includes expiry-date guarantees on all transactions. If a medicine expires before it reaches the buyer, the transaction is fully refunded through our buyer protection policy." },
+            { q: "How do I get paid as a seller?", a: "Payments are processed directly to your registered bank account within 24–48 hours of the buyer confirming receipt. You can track all payouts from your Transactions page." },
+          ].map((faq, i) => (
+            <motion.details
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="group rounded-xl bg-card border border-border shadow-card overflow-hidden"
+            >
+              <summary className="flex items-center justify-between cursor-pointer px-5 py-4 text-sm font-semibold text-foreground list-none">
+                {faq.q}
+                <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-90 shrink-0 ml-4" />
+              </summary>
+              <div className="px-5 pb-4 text-sm text-muted-foreground leading-relaxed">
+                {faq.a}
+              </div>
+            </motion.details>
+          ))}
+        </div>
+      </section>
+
 
       {/* FAQs */}
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
