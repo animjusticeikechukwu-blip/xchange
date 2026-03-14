@@ -119,38 +119,7 @@ const features = [
   },
 ];
 
-const features = [
-  {
-    icon: ShieldCheck,
-    title: "Verified Facilities",
-    desc: "Every pharmacy and hospital is license-verified before listing.",
-  },
-  {
-    icon: MapPin,
-    title: "Proximity Search",
-    desc: "Find discounted medicines from verified facilities near you.",
-  },
-  {
-    icon: Clock,
-    title: "Expiry Tracking",
-    desc: "Smart alerts remind you before stock expires so you can act fast.",
-  },
-  {
-    icon: BarChart3,
-    title: "Value Recovery",
-    desc: "Track how much value you've recovered from near-expiry stock.",
-  },
-  {
-    icon: Zap,
-    title: "Instant Listings",
-    desc: "List a medicine in under 60 seconds with our streamlined form.",
-  },
-  {
-    icon: Building2,
-    title: "B2B Marketplace",
-    desc: "Built for pharmacies, hospitals, and clinics — not consumers.",
-  },
-];
+
 
 const pricingTiers = [
   {
