@@ -22,7 +22,7 @@ const Welcome = () => {
       {/* Logo */}
       <div className="pt-12 pb-4 flex justify-center">
         <button onClick={() => navigate("/")} className="tap-highlight">
-          <img src={xchangeLogo} alt="Xchange" className="h-8 object-contain" />
+          <img src={xchangeLogo} alt="Xchange" className="h-10 object-contain" />
         </button>
       </div>
 

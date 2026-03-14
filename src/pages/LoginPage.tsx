@@ -14,7 +14,7 @@ const LoginPage = () => {
       <PageHeader title="Log In" showBack />
       <div className="max-w-lg mx-auto px-4 pt-8 space-y-6">
         <div className="text-center">
-          <img src={xchangeLogo} alt="Xchange" className="h-10 mx-auto mb-4 object-contain" />
+          <img src={xchangeLogo} alt="Xchange" className="h-14 mx-auto mb-4 object-contain" />
           <h2 className="text-2xl font-bold text-foreground">Welcome back</h2>
           <p className="text-sm text-muted-foreground mt-1">Sign in to your facility account</p>
         </div>

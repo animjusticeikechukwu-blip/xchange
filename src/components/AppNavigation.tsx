@@ -32,7 +32,7 @@ export function DesktopSidebar() {
       {/* Logo */}
       <div className="h-16 flex items-center px-5 border-b border-border">
         <button onClick={() => navigate("/dashboard")} className="tap-highlight">
-          <img src={xchangeLogo} alt="Xchange" className="h-8 object-contain" />
+          <img src={xchangeLogo} alt="Xchange" className="h-10 object-contain" />
         </button>
       </div>
 

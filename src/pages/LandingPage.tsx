@@ -202,7 +202,7 @@ const LandingPage = () => {
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-4 md:px-8">
           <button onClick={() => navigate("/")} className="tap-highlight">
-            <img src={xchangeLogo} alt="Xchange" className="h-9 md:h-10 object-contain" />
+            <img src={xchangeLogo} alt="Xchange" className="h-11 md:h-14 object-contain" />
           </button>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             <button onClick={() => scrollTo("how-it-works")} className="hover:text-foreground transition-colors">How It Works</button>
@@ -582,7 +582,7 @@ const LandingPage = () => {
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-10">
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <img src={xchangeLogo} alt="Xchange" className="h-6 mb-3 object-contain" />
+              <img src={xchangeLogo} alt="Xchange" className="h-8 mb-3 object-contain" />
               <p className="text-xs text-muted-foreground leading-relaxed">The medicine expiry marketplace for licensed healthcare facilities in Nigeria.</p>
             </div>
             <div>
