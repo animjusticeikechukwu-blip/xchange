@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
+import LandingPage from "./pages/LandingPage.tsx";
+import Dashboard from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import SearchPage from "./pages/SearchPage.tsx";
 import MedicineDetail from "./pages/MedicineDetail.tsx";
@@ -35,7 +36,18 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          {/* Public */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/verify" element={<VerifyPage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/support" element={<SupportPage />} />
+
+          {/* Authenticated */}
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/medicine/:id" element={<MedicineDetail />} />
           <Route path="/new-listing" element={<NewListing />} />
@@ -46,16 +58,10 @@ const App = () => (
           <Route path="/transaction-detail/:id" element={<TransactionDetail />} />
           <Route path="/transaction/:id" element={<TransactionSummary />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/verify" element={<VerifyPage />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/facility-info" element={<FacilityInfo />} />
           <Route path="/payment-info" element={<PaymentInfoPage />} />
-          <Route path="/support" element={<SupportPage />} />
-          <Route path="/terms" element={<TermsPage />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
