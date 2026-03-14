@@ -115,6 +115,7 @@ const features = [
     image: featB2b,
   },
 ];
+];
 
 
       {/* FAQs */}
