@@ -202,7 +202,7 @@ const LandingPage = () => {
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-4 md:px-8">
           <button onClick={() => navigate("/")} className="tap-highlight">
-            <img src={xchangeLogo} alt="Xchange" className="h-9 md:h-10 object-contain" />
+            <img src={xchangeLogo} alt="Xchange" className="h-11 md:h-14 object-contain" />
           </button>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             <button onClick={() => scrollTo("how-it-works")} className="hover:text-foreground transition-colors">How It Works</button>
