@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { ExpiryBadge } from "@/components/ExpiryBadge";
 import { sampleMedicines, formatNaira } from "@/data/sample-data";
 import { Button } from "@/components/ui/button";
+import verifiedBadge from "@/assets/verified-badge.png";
 
 const MedicineDetail = () => {
   const { id } = useParams();
@@ -70,13 +71,15 @@ const MedicineDetail = () => {
         {/* Seller Info */}
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="rounded-lg bg-card p-4 shadow-card">
           <h3 className="font-semibold text-sm text-card-foreground mb-2">Seller Facility</h3>
-          <div className="flex items-center gap-2">
-            {medicine.verified && <ShieldCheck className="h-4 w-4 text-primary" />}
-            <p className="text-sm font-medium text-card-foreground">{medicine.facilityName}</p>
-          </div>
-          <div className="flex items-center gap-1 mt-1 text-xs text-muted-foreground">
-            <MapPin className="h-3 w-3" />
-            <span>{medicine.location}</span>
+          <div className="flex items-center gap-3">
+            {medicine.verified && <img src={verifiedBadge} alt="Verified" className="w-8 h-8 object-contain" />}
+            <div>
+              <p className="text-sm font-medium text-card-foreground">{medicine.facilityName}</p>
+              <div className="flex items-center gap-1 mt-0.5 text-xs text-muted-foreground">
+                <MapPin className="h-3 w-3" />
+                <span>{medicine.location}</span>
+              </div>
+            </div>
           </div>
           <span className="inline-block mt-2 px-2 py-0.5 bg-secondary text-secondary-foreground rounded-full text-[11px] font-medium capitalize">
             {medicine.facilityType}

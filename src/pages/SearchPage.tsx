@@ -5,6 +5,7 @@ import { BottomNav } from "@/components/BottomNav";
 import { PageHeader } from "@/components/PageHeader";
 import { MedicineCard } from "@/components/MedicineCard";
 import { sampleMedicines } from "@/data/sample-data";
+import emptyState from "@/assets/empty-state.png";
 
 const sortOptions = ["Nearest Expiry", "Lowest Price", "Highest Price", "Proximity"];
 
@@ -29,7 +30,6 @@ const SearchPage = () => {
       <PageHeader title="Search Medicines" />
 
       <div className="max-w-lg mx-auto px-4 pt-4 space-y-4">
-        {/* Search Bar */}
         <div className="relative">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <input
@@ -49,7 +49,6 @@ const SearchPage = () => {
           </button>
         </div>
 
-        {/* Sort/Filter Row */}
         <AnimatePresence>
           {showFilters && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
@@ -70,7 +69,6 @@ const SearchPage = () => {
           )}
         </AnimatePresence>
 
-        {/* Results */}
         <p className="text-xs text-muted-foreground">{sorted.length} results</p>
         <div className="space-y-3">
           {sorted.map((med, i) => (
@@ -80,7 +78,9 @@ const SearchPage = () => {
 
         {sorted.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-sm text-muted-foreground">No medicines found. Try increasing search radius?</p>
+            <img src={emptyState} alt="" className="w-24 h-24 mx-auto mb-4 opacity-60" />
+            <p className="text-sm font-medium text-foreground">No medicines found</p>
+            <p className="text-xs text-muted-foreground mt-1">Try a different search term or increase your search radius.</p>
           </div>
         )}
       </div>

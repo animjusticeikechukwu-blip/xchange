@@ -4,6 +4,7 @@ import { BottomNav } from "@/components/BottomNav";
 import { PageHeader } from "@/components/PageHeader";
 import { MedicineCard } from "@/components/MedicineCard";
 import { sampleMedicines } from "@/data/sample-data";
+import emptyState from "@/assets/empty-state.png";
 
 type Tab = "active" | "sold" | "expired";
 
@@ -42,6 +43,7 @@ const ListingsPage = () => {
           </div>
         ) : (
           <div className="text-center py-16">
+            <img src={emptyState} alt="" className="w-20 h-20 mx-auto mb-3 opacity-60" />
             <p className="text-sm text-muted-foreground">
               {tab === "sold" ? "No sold listings yet." : "No expired listings."}
             </p>
