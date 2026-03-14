@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PageHeader } from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
+import xchangeLogo from "@/assets/xchange-logo.png";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const ForgotPassword = () => {
         ) : (
           <>
             <div className="text-center">
+              <img src={xchangeLogo} alt="Xchange" className="h-14 mx-auto mb-4 object-contain" />
               <h2 className="text-xl font-bold text-foreground">Forgot your password?</h2>
               <p className="text-sm text-muted-foreground mt-1">Enter your email to receive reset instructions.</p>
             </div>
