@@ -582,7 +582,7 @@ const LandingPage = () => {
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-10">
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <img src={xchangeLogo} alt="Xchange" className="h-6 mb-3 object-contain" />
+              <img src={xchangeLogo} alt="Xchange" className="h-8 mb-3 object-contain" />
               <p className="text-xs text-muted-foreground leading-relaxed">The medicine expiry marketplace for licensed healthcare facilities in Nigeria.</p>
             </div>
             <div>

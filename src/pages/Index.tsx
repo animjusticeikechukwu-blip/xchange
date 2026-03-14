@@ -21,7 +21,7 @@ const Dashboard = () => {
         <div className="absolute inset-0 bg-primary/85" />
         <div className="relative text-primary-foreground px-4 md:px-6 pt-10 pb-8">
           <div className="max-w-5xl mx-auto">
-            <img src={xchangeLogo} alt="Xchange" className="h-6 mb-4 brightness-[10] object-contain md:hidden" />
+            <img src={xchangeLogo} alt="Xchange" className="h-8 mb-4 brightness-[10] object-contain md:hidden" />
             <p className="text-sm opacity-80">Good morning</p>
             <h1 className="text-2xl md:text-3xl font-bold mt-1">MedPlus Pharmacy</h1>
             {unreadNotifs > 0 && (
