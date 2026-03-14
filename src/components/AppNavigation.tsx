@@ -78,8 +78,8 @@ export function DesktopSidebar() {
           onClick={() => navigate("/")}
           className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
         >
-          <ArrowLeft className="h-5 w-5 shrink-0" />
-          <span>Back to Website</span>
+          <Home className="h-5 w-5 shrink-0" />
+          <span>Home</span>
         </button>
       </div>
     </aside>
