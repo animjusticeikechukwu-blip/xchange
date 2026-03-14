@@ -1,3 +1,10 @@
+import medAmoxicillin from "@/assets/med-amoxicillin.jpg";
+import medMetformin from "@/assets/med-metformin.jpg";
+import medCiprofloxacin from "@/assets/med-ciprofloxacin.jpg";
+import medOmeprazole from "@/assets/med-omeprazole.jpg";
+import medCoartem from "@/assets/med-coartem.jpg";
+import medParacetamol from "@/assets/med-paracetamol.jpg";
+
 export interface Medicine {
   id: string;
   name: string;
@@ -15,6 +22,7 @@ export interface Medicine {
   listedDate: string;
   status: "active" | "sold" | "expired";
   verified: boolean;
+  image: string;
 }
 
 export interface Transaction {
@@ -40,12 +48,12 @@ export interface Notification {
 }
 
 export const sampleMedicines: Medicine[] = [
-  { id: "1", name: "Amoxicillin", brand: "Beecham", quantity: 200, unit: "capsules", expiryDate: "2026-04-20", batchNumber: "BX-2024-0891", price: 8500, originalPrice: 15000, facilityName: "MedPlus Pharmacy", facilityType: "pharmacy", location: "Lekki, Lagos", daysToExpiry: 37, listedDate: "2026-03-10", status: "active", verified: true },
-  { id: "2", name: "Metformin 500mg", brand: "Glucophage", quantity: 100, unit: "tablets", expiryDate: "2026-05-15", batchNumber: "GF-2024-1123", price: 4200, originalPrice: 7800, facilityName: "LifeCare Hospital", facilityType: "hospital", location: "Ikeja, Lagos", daysToExpiry: 62, listedDate: "2026-03-08", status: "active", verified: true },
-  { id: "3", name: "Ciprofloxacin 500mg", brand: "Cipro", quantity: 50, unit: "tablets", expiryDate: "2026-04-01", batchNumber: "CP-2023-7742", price: 3200, originalPrice: 6500, facilityName: "PharmaCare Plus", facilityType: "pharmacy", location: "Victoria Island, Lagos", daysToExpiry: 18, listedDate: "2026-03-05", status: "active", verified: true },
-  { id: "4", name: "Omeprazole 20mg", brand: "Losec", quantity: 150, unit: "capsules", expiryDate: "2026-06-30", batchNumber: "LS-2024-3345", price: 6000, originalPrice: 9200, facilityName: "Unity Hospital", facilityType: "hospital", location: "Surulere, Lagos", daysToExpiry: 108, listedDate: "2026-03-12", status: "active", verified: false },
-  { id: "5", name: "Artemether/Lumefantrine", brand: "Coartem", quantity: 80, unit: "packs", expiryDate: "2026-03-28", batchNumber: "CT-2024-5567", price: 12000, originalPrice: 22000, facilityName: "Greenfield Clinic", facilityType: "clinic", location: "Yaba, Lagos", daysToExpiry: 14, listedDate: "2026-03-01", status: "active", verified: true },
-  { id: "6", name: "Paracetamol 500mg", brand: "Emzor", quantity: 500, unit: "tablets", expiryDate: "2026-08-20", batchNumber: "EM-2024-9912", price: 3500, originalPrice: 5000, facilityName: "MedPlus Pharmacy", facilityType: "pharmacy", location: "Lekki, Lagos", daysToExpiry: 159, listedDate: "2026-03-13", status: "active", verified: true },
+  { id: "1", name: "Amoxicillin", brand: "Beecham", quantity: 200, unit: "capsules", expiryDate: "2026-04-20", batchNumber: "BX-2024-0891", price: 8500, originalPrice: 15000, facilityName: "MedPlus Pharmacy", facilityType: "pharmacy", location: "Lekki, Lagos", daysToExpiry: 37, listedDate: "2026-03-10", status: "active", verified: true, image: medAmoxicillin },
+  { id: "2", name: "Metformin 500mg", brand: "Glucophage", quantity: 100, unit: "tablets", expiryDate: "2026-05-15", batchNumber: "GF-2024-1123", price: 4200, originalPrice: 7800, facilityName: "LifeCare Hospital", facilityType: "hospital", location: "Ikeja, Lagos", daysToExpiry: 62, listedDate: "2026-03-08", status: "active", verified: true, image: medMetformin },
+  { id: "3", name: "Ciprofloxacin 500mg", brand: "Cipro", quantity: 50, unit: "tablets", expiryDate: "2026-04-01", batchNumber: "CP-2023-7742", price: 3200, originalPrice: 6500, facilityName: "PharmaCare Plus", facilityType: "pharmacy", location: "Victoria Island, Lagos", daysToExpiry: 18, listedDate: "2026-03-05", status: "active", verified: true, image: medCiprofloxacin },
+  { id: "4", name: "Omeprazole 20mg", brand: "Losec", quantity: 150, unit: "capsules", expiryDate: "2026-06-30", batchNumber: "LS-2024-3345", price: 6000, originalPrice: 9200, facilityName: "Unity Hospital", facilityType: "hospital", location: "Surulere, Lagos", daysToExpiry: 108, listedDate: "2026-03-12", status: "active", verified: false, image: medOmeprazole },
+  { id: "5", name: "Artemether/Lumefantrine", brand: "Coartem", quantity: 80, unit: "packs", expiryDate: "2026-03-28", batchNumber: "CT-2024-5567", price: 12000, originalPrice: 22000, facilityName: "Greenfield Clinic", facilityType: "clinic", location: "Yaba, Lagos", daysToExpiry: 14, listedDate: "2026-03-01", status: "active", verified: true, image: medCoartem },
+  { id: "6", name: "Paracetamol 500mg", brand: "Emzor", quantity: 500, unit: "tablets", expiryDate: "2026-08-20", batchNumber: "EM-2024-9912", price: 3500, originalPrice: 5000, facilityName: "MedPlus Pharmacy", facilityType: "pharmacy", location: "Lekki, Lagos", daysToExpiry: 159, listedDate: "2026-03-13", status: "active", verified: true, image: medParacetamol },
 ];
 
 export const sampleTransactions: Transaction[] = [

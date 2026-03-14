@@ -33,6 +33,15 @@ const MedicineDetail = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {/* Left column */}
           <div className="md:col-span-2 space-y-4">
+            {/* Medicine Image */}
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="rounded-lg overflow-hidden shadow-card bg-muted">
+              <img
+                src={medicine.image}
+                alt={medicine.name}
+                className="w-full h-48 md:h-64 object-cover"
+              />
+            </motion.div>
+
             {/* Title Card */}
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="rounded-lg bg-card p-5 shadow-card">
               <div className="flex items-start justify-between">

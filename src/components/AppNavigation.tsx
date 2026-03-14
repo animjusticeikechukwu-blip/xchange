@@ -28,9 +28,11 @@ export function DesktopSidebar() {
 
   return (
     <aside className="hidden md:flex flex-col fixed left-0 top-0 bottom-0 w-60 lg:w-64 bg-card border-r border-border z-50">
-      {/* Logo */}
+      {/* Logo — click goes to dashboard */}
       <div className="h-16 flex items-center px-5 border-b border-border">
-        <img src={xchangeLogo} alt="Xchange" className="h-7 object-contain" />
+        <button onClick={() => navigate("/dashboard")} className="tap-highlight">
+          <img src={xchangeLogo} alt="Xchange" className="h-7 object-contain" />
+        </button>
       </div>
 
       {/* Nav */}
@@ -59,13 +61,19 @@ export function DesktopSidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="px-3 pb-4">
+      <div className="px-3 pb-4 space-y-1">
         <button
           onClick={() => navigate("/support")}
           className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
         >
           <HelpCircle className="h-5 w-5 shrink-0" />
           <span>Help & Support</span>
+        </button>
+        <button
+          onClick={() => navigate("/")}
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <span>← Back to Website</span>
         </button>
       </div>
     </aside>
