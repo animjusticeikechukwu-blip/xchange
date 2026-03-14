@@ -18,7 +18,7 @@ const PaymentSuccess = () => {
         <p className="text-sm text-muted-foreground">Your transaction has been completed. The seller has been notified.</p>
         <div className="space-y-2 pt-4">
           <Button className="w-full h-12" onClick={() => navigate("/transactions")}>View Transactions</Button>
-          <Button variant="outline" className="w-full h-12" onClick={() => navigate("/")}>Back to Home</Button>
+          <Button variant="outline" className="w-full h-12" onClick={() => navigate("/dashboard")}>Back to Home</Button>
         </div>
       </motion.div>
     </div>
