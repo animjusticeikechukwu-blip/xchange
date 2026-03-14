@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PageHeader } from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
+import xchangeLogo from "@/assets/xchange-logo.png";
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const SignupPage = () => {
       <PageHeader title="Sign Up" showBack />
       <div className="max-w-lg mx-auto px-4 pt-6 space-y-4">
         <div className="text-center mb-2">
+          <img src={xchangeLogo} alt="Xchange" className="h-14 mx-auto mb-4 object-contain" />
           <h2 className="text-xl font-bold text-foreground">Register your facility</h2>
           <p className="text-sm text-muted-foreground mt-1">Join Xchange to recover value from expiring stock</p>
         </div>

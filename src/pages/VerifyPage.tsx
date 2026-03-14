@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { PageHeader } from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
+import xchangeLogo from "@/assets/xchange-logo.png";
 
 const VerifyPage = () => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ const VerifyPage = () => {
     <div className="min-h-screen bg-background">
       <PageHeader title="Verification" showBack />
       <div className="max-w-lg mx-auto px-4 pt-12 text-center space-y-6">
+        <img src={xchangeLogo} alt="Xchange" className="h-14 mx-auto object-contain" />
         <div className="text-5xl">📧</div>
         <h2 className="text-xl font-bold text-foreground">Check your email</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">We've sent a verification code to your email address. Enter it below to verify your account.</p>
