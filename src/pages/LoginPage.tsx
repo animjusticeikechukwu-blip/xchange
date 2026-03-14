@@ -23,7 +23,7 @@ const LoginPage = () => {
           <input type="password" className={inputClass} placeholder="Password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} />
         </div>
         <button onClick={() => navigate("/forgot-password")} className="text-xs font-semibold text-primary">Forgot password?</button>
-        <Button className="w-full h-12" onClick={() => navigate("/")}>Log In</Button>
+        <Button className="w-full h-12" onClick={() => navigate("/dashboard")}>Log In</Button>
         <p className="text-center text-sm text-muted-foreground">
           Don't have an account? <button onClick={() => navigate("/signup")} className="font-semibold text-primary">Sign up</button>
         </p>

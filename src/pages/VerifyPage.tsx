@@ -17,7 +17,7 @@ const VerifyPage = () => {
             <input key={i} maxLength={1} className="w-11 h-12 text-center rounded-lg bg-card border border-border text-lg font-bold text-foreground shadow-card focus:outline-none focus:ring-2 focus:ring-primary/20 font-mono-data" />
           ))}
         </div>
-        <Button className="w-full h-12" onClick={() => navigate("/")}>Verify</Button>
+        <Button className="w-full h-12" onClick={() => navigate("/dashboard")}>Verify</Button>
         <button className="text-xs font-semibold text-primary">Resend Code</button>
       </div>
     </div>
