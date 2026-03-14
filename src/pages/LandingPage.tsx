@@ -62,18 +62,60 @@ const howItWorks = [
     title: "List Your Stock",
     desc: "Add medicines approaching expiry with batch details, quantity, and your price.",
     icon: Pill,
+    image: stepList,
   },
   {
     step: "02",
     title: "Get Discovered",
     desc: "Nearby facilities search and find your listing based on proximity and need.",
     icon: Search,
+    image: stepDiscover,
   },
   {
     step: "03",
     title: "Secure the Deal",
     desc: "Buyer secures the item, payment is processed, and you recover value.",
     icon: ShieldCheck,
+    image: stepSecure,
+  },
+];
+
+const features = [
+  {
+    icon: ShieldCheck,
+    title: "Verified Facilities",
+    desc: "Every pharmacy and hospital is license-verified before listing.",
+    image: featVerified,
+  },
+  {
+    icon: MapPin,
+    title: "Proximity Search",
+    desc: "Find discounted medicines from verified facilities near you.",
+    image: featProximity,
+  },
+  {
+    icon: Clock,
+    title: "Expiry Tracking",
+    desc: "Smart alerts remind you before stock expires so you can act fast.",
+    image: featExpiry,
+  },
+  {
+    icon: BarChart3,
+    title: "Value Recovery",
+    desc: "Track how much value you've recovered from near-expiry stock.",
+    image: featRecovery,
+  },
+  {
+    icon: Zap,
+    title: "Instant Listings",
+    desc: "List a medicine in under 60 seconds with our streamlined form.",
+    image: featInstant,
+  },
+  {
+    icon: Building2,
+    title: "B2B Marketplace",
+    desc: "Built for pharmacies, hospitals, and clinics — not consumers.",
+    image: featB2b,
   },
 ];
 
