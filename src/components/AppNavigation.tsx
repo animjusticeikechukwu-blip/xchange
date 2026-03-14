@@ -1,11 +1,11 @@
-import { Home, Search, Plus, Bell, User, Package, History, HelpCircle, ArrowLeft } from "lucide-react";
+import { LayoutDashboard, Search, Plus, Bell, User, Package, History, HelpCircle, Home } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import xchangeLogo from "@/assets/xchange-logo.png";
 
 const navItems = [
-  { icon: Home, label: "Home", path: "/dashboard" },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
   { icon: Search, label: "Search", path: "/search" },
   { icon: Plus, label: "New Listing", path: "/new-listing", isAction: true },
   { icon: Package, label: "My Listings", path: "/listings" },
@@ -15,7 +15,7 @@ const navItems = [
 ];
 
 const mobileNavItems = [
-  { icon: Home, label: "Home", path: "/dashboard" },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
   { icon: Search, label: "Search", path: "/search" },
   { icon: Plus, label: "List", path: "/new-listing", isAction: true },
   { icon: Bell, label: "Alerts", path: "/notifications" },
@@ -78,8 +78,8 @@ export function DesktopSidebar() {
           onClick={() => navigate("/")}
           className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
         >
-          <ArrowLeft className="h-5 w-5 shrink-0" />
-          <span>Back to Website</span>
+          <Home className="h-5 w-5 shrink-0" />
+          <span>Home</span>
         </button>
       </div>
     </aside>

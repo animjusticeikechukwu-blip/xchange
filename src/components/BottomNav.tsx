@@ -1,10 +1,10 @@
-import { Home, Search, Plus, Bell, User } from "lucide-react";
+import { LayoutDashboard, Search, Plus, Bell, User } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 const navItems = [
-  { icon: Home, label: "Home", path: "/dashboard" },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
   { icon: Search, label: "Search", path: "/search" },
   { icon: Plus, label: "List", path: "/new-listing", isAction: true },
   { icon: Bell, label: "Alerts", path: "/notifications" },
