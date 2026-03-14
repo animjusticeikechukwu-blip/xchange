@@ -246,13 +246,13 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[85vh] flex items-center">
+      <section className="relative overflow-hidden min-h-[70vh] flex items-center">
         <div className="absolute inset-0">
           <img src={pharmacyInterior} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-primary/80" />
         </div>
-        <div className="relative max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24 w-full">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-16 w-full">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -309,7 +309,7 @@ const LandingPage = () => {
 
       {/* Stats Bar */}
       <section className="border-y border-border bg-muted/50">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-8">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, i) => (
               <motion.div
@@ -329,8 +329,8 @@ const LandingPage = () => {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="text-center mb-12">
+      <section id="how-it-works" className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">How Xchange Works</h2>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Three simple steps to recover value from expiring stock or find discounted medicines nearby.</p>
         </div>
@@ -361,8 +361,8 @@ const LandingPage = () => {
       </section>
 
       {/* Featured Medicines */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="text-center mb-12">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Medicines Available Now</h2>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Browse verified, discounted medicines from licensed facilities. New listings added daily.</p>
         </div>
@@ -411,8 +411,8 @@ const LandingPage = () => {
 
       {/* Features */}
       <section id="features" className="bg-muted/30 border-y border-border">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
-          <div className="text-center mb-12">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Built for Healthcare Professionals</h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Every feature designed for the speed and reliability Nigerian pharmacies demand.</p>
           </div>
@@ -443,8 +443,8 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="text-center mb-12">
+      <section id="pricing" className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Simple, Commission-Based Pricing</h2>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">No monthly fees. No setup costs. You only pay a small commission when a transaction is completed successfully.</p>
         </div>
@@ -531,8 +531,8 @@ const LandingPage = () => {
 
       {/* Testimonials */}
       <section id="testimonials" className="bg-muted/30 border-y border-border">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
-          <div className="text-center mb-12">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Trusted by Facilities Across Nigeria</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -562,7 +562,7 @@ const LandingPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

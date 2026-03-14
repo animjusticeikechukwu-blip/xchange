@@ -31,7 +31,7 @@ const Dashboard = () => {
         </div>
       </header>
 
-      <div className="max-w-5xl mx-auto px-4 md:px-6 -mt-3 space-y-4 md:space-y-6 pb-6">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 -mt-3 space-y-3 md:space-y-4 pb-4">
         {/* Stats Row */}
         <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-4">
           <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="rounded-lg bg-card p-3 md:p-5 shadow-card text-center">
