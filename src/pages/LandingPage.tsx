@@ -359,7 +359,6 @@ const LandingPage = () => {
           ))}
         </div>
       </section>
-      </section>
 
       {/* Featured Medicines */}
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
