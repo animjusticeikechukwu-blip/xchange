@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import xchangeLogo from "@/assets/xchange-logo.png";
 
 const navItems = [
+  { icon: Home, label: "Home", path: "/" },
   { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
   { icon: Search, label: "Search", path: "/search" },
   { icon: Plus, label: "New Listing", path: "/new-listing", isAction: true },
