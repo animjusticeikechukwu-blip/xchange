@@ -24,6 +24,21 @@ import verifiedBadge from "@/assets/verified-badge.png";
 import onboardingRecover from "@/assets/onboarding-recover.png";
 import onboardingReduce from "@/assets/onboarding-reduce.png";
 import onboardingDiscover from "@/assets/onboarding-discover.png";
+import medAmoxicillin from "@/assets/med-amoxicillin.jpg";
+import medMetformin from "@/assets/med-metformin.jpg";
+import medCiprofloxacin from "@/assets/med-ciprofloxacin.jpg";
+import medCoartem from "@/assets/med-coartem.jpg";
+import medParacetamol from "@/assets/med-paracetamol.jpg";
+import medOmeprazole from "@/assets/med-omeprazole.jpg";
+
+const featuredMedicines = [
+  { name: "Amoxicillin", brand: "Beecham", price: "₦8,500", discount: "43%", daysLeft: 37, image: medAmoxicillin, location: "Lekki, Lagos" },
+  { name: "Metformin 500mg", brand: "Glucophage", price: "₦4,200", discount: "46%", daysLeft: 62, image: medMetformin, location: "Ikeja, Lagos" },
+  { name: "Ciprofloxacin 500mg", brand: "Cipro", price: "₦3,200", discount: "51%", daysLeft: 18, image: medCiprofloxacin, location: "V.I., Lagos" },
+  { name: "Artemether/Lumefantrine", brand: "Coartem", price: "₦12,000", discount: "45%", daysLeft: 14, image: medCoartem, location: "Yaba, Lagos" },
+  { name: "Paracetamol 500mg", brand: "Emzor", price: "₦3,500", discount: "30%", daysLeft: 159, image: medParacetamol, location: "Lekki, Lagos" },
+  { name: "Omeprazole 20mg", brand: "Losec", price: "₦6,000", discount: "35%", daysLeft: 108, image: medOmeprazole, location: "Surulere, Lagos" },
+];
 
 const stats = [
   { value: "2,500+", label: "Licensed Facilities" },
