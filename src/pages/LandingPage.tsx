@@ -329,8 +329,8 @@ const LandingPage = () => {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="text-center mb-12">
+      <section id="how-it-works" className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">How Xchange Works</h2>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Three simple steps to recover value from expiring stock or find discounted medicines nearby.</p>
         </div>
