@@ -443,8 +443,8 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="text-center mb-12">
+      <section id="pricing" className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Simple, Commission-Based Pricing</h2>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">No monthly fees. No setup costs. You only pay a small commission when a transaction is completed successfully.</p>
         </div>
