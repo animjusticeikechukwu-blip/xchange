@@ -258,13 +258,10 @@ const LandingPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <div className="flex items-center gap-3 mb-8">
-                <img src={xchangeLogo} alt="Xchange" className="h-16 md:h-20 object-contain brightness-[10]" />
+              <div className="flex items-center gap-3 mb-6">
+                <img src={xchangeLogo} alt="Xchange" className="h-20 md:h-28 lg:h-32 object-contain brightness-[10]" />
               </div>
 
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-foreground/15 text-primary-foreground text-xs font-semibold mb-6">
-                <ShieldCheck className="h-3.5 w-3.5" /> For Licensed Healthcare Facilities in Nigeria
-              </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] tracking-tight">
                 Recover value.<br />Reduce waste.
               </h1>
