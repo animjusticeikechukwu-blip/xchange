@@ -345,14 +345,19 @@ const LandingPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-xl bg-card p-6 shadow-card text-center"
+              className="rounded-xl bg-card shadow-card overflow-hidden text-center"
             >
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <item.icon className="h-6 w-6 text-primary" />
+              <div className="h-44 md:h-52 overflow-hidden">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
               </div>
-              <span className="text-xs font-bold text-primary font-mono-data">STEP {item.step}</span>
-              <h3 className="text-lg font-bold text-card-foreground mt-2">{item.title}</h3>
-              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 -mt-10 relative z-10 border-4 border-card">
+                  <item.icon className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-xs font-bold text-primary font-mono-data">STEP {item.step}</span>
+                <h3 className="text-lg font-bold text-card-foreground mt-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
