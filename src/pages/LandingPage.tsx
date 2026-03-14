@@ -246,7 +246,7 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[85vh] flex items-center">
+      <section className="relative overflow-hidden min-h-[70vh] flex items-center">
         <div className="absolute inset-0">
           <img src={pharmacyInterior} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-primary/80" />
