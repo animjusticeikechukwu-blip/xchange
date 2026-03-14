@@ -24,6 +24,15 @@ import verifiedBadge from "@/assets/verified-badge.png";
 import onboardingRecover from "@/assets/onboarding-recover.png";
 import onboardingReduce from "@/assets/onboarding-reduce.png";
 import onboardingDiscover from "@/assets/onboarding-discover.png";
+import stepList from "@/assets/step-list.jpg";
+import stepDiscover from "@/assets/step-discover.jpg";
+import stepSecure from "@/assets/step-secure.jpg";
+import featVerified from "@/assets/feat-verified.jpg";
+import featProximity from "@/assets/feat-proximity.jpg";
+import featExpiry from "@/assets/feat-expiry.jpg";
+import featRecovery from "@/assets/feat-recovery.jpg";
+import featInstant from "@/assets/feat-instant.jpg";
+import featB2b from "@/assets/feat-b2b.jpg";
 import medAmoxicillin from "@/assets/med-amoxicillin.jpg";
 import medMetformin from "@/assets/med-metformin.jpg";
 import medCiprofloxacin from "@/assets/med-ciprofloxacin.jpg";
@@ -53,18 +62,21 @@ const howItWorks = [
     title: "List Your Stock",
     desc: "Add medicines approaching expiry with batch details, quantity, and your price.",
     icon: Pill,
+    image: stepList,
   },
   {
     step: "02",
     title: "Get Discovered",
     desc: "Nearby facilities search and find your listing based on proximity and need.",
     icon: Search,
+    image: stepDiscover,
   },
   {
     step: "03",
     title: "Secure the Deal",
     desc: "Buyer secures the item, payment is processed, and you recover value.",
     icon: ShieldCheck,
+    image: stepSecure,
   },
 ];
 
@@ -73,33 +85,41 @@ const features = [
     icon: ShieldCheck,
     title: "Verified Facilities",
     desc: "Every pharmacy and hospital is license-verified before listing.",
+    image: featVerified,
   },
   {
     icon: MapPin,
     title: "Proximity Search",
     desc: "Find discounted medicines from verified facilities near you.",
+    image: featProximity,
   },
   {
     icon: Clock,
     title: "Expiry Tracking",
     desc: "Smart alerts remind you before stock expires so you can act fast.",
+    image: featExpiry,
   },
   {
     icon: BarChart3,
     title: "Value Recovery",
     desc: "Track how much value you've recovered from near-expiry stock.",
+    image: featRecovery,
   },
   {
     icon: Zap,
     title: "Instant Listings",
     desc: "List a medicine in under 60 seconds with our streamlined form.",
+    image: featInstant,
   },
   {
     icon: Building2,
     title: "B2B Marketplace",
     desc: "Built for pharmacies, hospitals, and clinics — not consumers.",
+    image: featB2b,
   },
 ];
+
+
 
 const pricingTiers = [
   {
@@ -325,14 +345,19 @@ const LandingPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-xl bg-card p-6 shadow-card text-center"
+              className="rounded-xl bg-card shadow-card overflow-hidden text-center"
             >
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <item.icon className="h-6 w-6 text-primary" />
+              <div className="h-44 md:h-52 overflow-hidden">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
               </div>
-              <span className="text-xs font-bold text-primary font-mono-data">STEP {item.step}</span>
-              <h3 className="text-lg font-bold text-card-foreground mt-2">{item.title}</h3>
-              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 -mt-10 relative z-10 border-4 border-card">
+                  <item.icon className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-xs font-bold text-primary font-mono-data">STEP {item.step}</span>
+                <h3 className="text-lg font-bold text-card-foreground mt-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -407,13 +432,18 @@ const LandingPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="rounded-xl bg-card p-5 shadow-card"
+                className="rounded-xl bg-card shadow-card overflow-hidden"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                  <feat.icon className="h-5 w-5 text-primary" />
+                <div className="h-36 md:h-40 overflow-hidden">
+                  <img src={feat.image} alt={feat.title} className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <h3 className="font-bold text-card-foreground">{feat.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{feat.desc}</p>
+                <div className="p-5">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 -mt-8 relative z-10 border-2 border-card">
+                    <feat.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-card-foreground">{feat.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{feat.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
