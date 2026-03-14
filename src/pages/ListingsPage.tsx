@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { BottomNav } from "@/components/BottomNav";
+import { AppLayout } from "@/components/AppLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { MedicineCard } from "@/components/MedicineCard";
 import { sampleMedicines } from "@/data/sample-data";
@@ -19,11 +19,11 @@ const ListingsPage = () => {
   const filtered = tab === "active" ? sampleMedicines : [];
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <AppLayout>
       <PageHeader title="My Listings" />
 
-      <div className="max-w-lg mx-auto px-4 pt-4 space-y-4">
-        <div className="flex gap-1 bg-muted rounded-lg p-1">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 pt-4 space-y-4">
+        <div className="flex gap-1 bg-muted rounded-lg p-1 max-w-xs">
           {tabs.map((t) => (
             <button
               key={t.key}
@@ -36,7 +36,7 @@ const ListingsPage = () => {
         </div>
 
         {filtered.length > 0 ? (
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {filtered.map((med, i) => (
               <MedicineCard key={med.id} medicine={med} index={i} />
             ))}
@@ -50,9 +50,7 @@ const ListingsPage = () => {
           </div>
         )}
       </div>
-
-      <BottomNav />
-    </div>
+    </AppLayout>
   );
 };
 
