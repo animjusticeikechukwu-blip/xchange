@@ -432,13 +432,18 @@ const LandingPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="rounded-xl bg-card p-5 shadow-card"
+                className="rounded-xl bg-card shadow-card overflow-hidden"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                  <feat.icon className="h-5 w-5 text-primary" />
+                <div className="h-36 md:h-40 overflow-hidden">
+                  <img src={feat.image} alt={feat.title} className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <h3 className="font-bold text-card-foreground">{feat.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{feat.desc}</p>
+                <div className="p-5">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 -mt-8 relative z-10 border-2 border-card">
+                    <feat.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-card-foreground">{feat.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{feat.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
