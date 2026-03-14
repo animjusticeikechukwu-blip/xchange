@@ -242,7 +242,7 @@ const LandingPage = () => {
               transition={{ duration: 0.4 }}
             >
               <div className="flex items-center gap-3 mb-8">
-                <img src={xchangeLogo} alt="Xchange" className="h-12 md:h-14 object-contain brightness-[10]" />
+                <img src={xchangeLogo} alt="Xchange" className="h-16 md:h-20 object-contain brightness-[10]" />
               </div>
 
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-foreground/15 text-primary-foreground text-xs font-semibold mb-6">
