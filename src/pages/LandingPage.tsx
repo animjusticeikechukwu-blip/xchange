@@ -13,10 +13,13 @@ import {
   Pill,
   MapPin,
   BarChart3,
+  Menu,
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import xchangeLogo from "@/assets/xchange-logo.png";
-import dashboardHero from "@/assets/dashboard-hero.jpg";
+import pharmacyInterior from "@/assets/pharmacy-interior.jpg";
 import verifiedBadge from "@/assets/verified-badge.png";
 import onboardingRecover from "@/assets/onboarding-recover.png";
 import onboardingReduce from "@/assets/onboarding-reduce.png";
@@ -154,30 +157,66 @@ const testimonials = [
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const scrollTo = (id: string) => {
+    setMobileMenuOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-background">
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-4 md:px-8">
-          <img src={xchangeLogo} alt="Xchange" className="h-7 object-contain" />
+          <button onClick={() => navigate("/")} className="tap-highlight">
+            <img src={xchangeLogo} alt="Xchange" className="h-7 object-contain" />
+          </button>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>
-            <a href="#features" className="hover:text-foreground transition-colors">Features</a>
-            <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
-            <a href="#testimonials" className="hover:text-foreground transition-colors">Testimonials</a>
+            <button onClick={() => scrollTo("how-it-works")} className="hover:text-foreground transition-colors">How It Works</button>
+            <button onClick={() => scrollTo("features")} className="hover:text-foreground transition-colors">Features</button>
+            <button onClick={() => scrollTo("pricing")} className="hover:text-foreground transition-colors">Pricing</button>
+            <button onClick={() => scrollTo("testimonials")} className="hover:text-foreground transition-colors">Testimonials</button>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" onClick={() => navigate("/login")}>Log In</Button>
-            <Button size="sm" onClick={() => navigate("/signup")}>Sign Up</Button>
+            <Button variant="ghost" size="sm" onClick={() => navigate("/login")} className="hidden sm:inline-flex">Log In</Button>
+            <Button size="sm" onClick={() => navigate("/signup")} className="hidden sm:inline-flex">Sign Up</Button>
+            {/* Mobile menu toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 tap-highlight"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-t border-border bg-background"
+          >
+            <div className="px-4 py-4 space-y-3">
+              <button onClick={() => scrollTo("how-it-works")} className="block w-full text-left text-sm font-medium text-foreground py-2">How It Works</button>
+              <button onClick={() => scrollTo("features")} className="block w-full text-left text-sm font-medium text-foreground py-2">Features</button>
+              <button onClick={() => scrollTo("pricing")} className="block w-full text-left text-sm font-medium text-foreground py-2">Pricing</button>
+              <button onClick={() => scrollTo("testimonials")} className="block w-full text-left text-sm font-medium text-foreground py-2">Testimonials</button>
+              <div className="flex gap-3 pt-2 border-t border-border">
+                <Button variant="outline" className="flex-1" onClick={() => { setMobileMenuOpen(false); navigate("/login"); }}>Log In</Button>
+                <Button className="flex-1" onClick={() => { setMobileMenuOpen(false); navigate("/signup"); }}>Sign Up</Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </nav>
 
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[85vh] flex items-center">
         <div className="absolute inset-0">
-          <img src={dashboardHero} alt="" className="w-full h-full object-cover" />
+          <img src={pharmacyInterior} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-primary/80" />
         </div>
         <div className="relative max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24 w-full">
@@ -187,7 +226,6 @@ const LandingPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              {/* Logo + App Name */}
               <div className="flex items-center gap-3 mb-8">
                 <img src={xchangeLogo} alt="Xchange" className="h-12 md:h-14 object-contain brightness-[10]" />
               </div>
@@ -205,13 +243,12 @@ const LandingPage = () => {
                 <Button variant="secondary" size="lg" className="h-13 px-8 text-base font-semibold" onClick={() => navigate("/signup")}>
                   Start Listing Free <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="lg" className="h-13 px-8 text-base border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" onClick={() => navigate("/search")}>
-                  Browse Medicines
+                <Button variant="outline" size="lg" className="h-13 px-8 text-base border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" onClick={() => navigate("/dashboard")}>
+                  View Demo
                 </Button>
               </div>
             </motion.div>
 
-            {/* Right side — key stats overlay */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
@@ -284,7 +321,6 @@ const LandingPage = () => {
             </motion.div>
           ))}
         </div>
-        {/* Illustrations row */}
         <div className="grid grid-cols-3 gap-4 mt-12 max-w-md mx-auto">
           <img src={onboardingRecover} alt="List stock" className="w-full aspect-square object-contain opacity-80" />
           <img src={onboardingReduce} alt="Reduce waste" className="w-full aspect-square object-contain opacity-80" />
@@ -469,9 +505,9 @@ const LandingPage = () => {
             <div>
               <h4 className="font-semibold text-sm text-foreground mb-3">Platform</h4>
               <ul className="space-y-2 text-xs text-muted-foreground">
-                <li><a href="#how-it-works" className="hover:text-foreground">How It Works</a></li>
-                <li><a href="#features" className="hover:text-foreground">Features</a></li>
-                <li><a href="#pricing" className="hover:text-foreground">Pricing</a></li>
+                <li><button onClick={() => scrollTo("how-it-works")} className="hover:text-foreground">How It Works</button></li>
+                <li><button onClick={() => scrollTo("features")} className="hover:text-foreground">Features</button></li>
+                <li><button onClick={() => scrollTo("pricing")} className="hover:text-foreground">Pricing</button></li>
               </ul>
             </div>
             <div>
@@ -487,6 +523,7 @@ const LandingPage = () => {
               <ul className="space-y-2 text-xs text-muted-foreground">
                 <li><button onClick={() => navigate("/signup")} className="hover:text-foreground">Register Facility</button></li>
                 <li><button onClick={() => navigate("/login")} className="hover:text-foreground">Log In</button></li>
+                <li><button onClick={() => navigate("/dashboard")} className="hover:text-foreground">View Demo</button></li>
               </ul>
             </div>
           </div>

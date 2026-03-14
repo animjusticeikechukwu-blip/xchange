@@ -21,7 +21,9 @@ const Welcome = () => {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Logo */}
       <div className="pt-12 pb-4 flex justify-center">
-        <img src={xchangeLogo} alt="Xchange" className="h-8 object-contain" />
+        <button onClick={() => navigate("/")} className="tap-highlight">
+          <img src={xchangeLogo} alt="Xchange" className="h-8 object-contain" />
+        </button>
       </div>
 
       <div className="flex-1 flex items-center justify-center px-8">
@@ -54,7 +56,10 @@ const Welcome = () => {
             <Button className="flex-1 h-12" onClick={() => setStep(step + 1)}>Next</Button>
           </div>
         ) : (
-          <Button className="w-full h-12" onClick={() => navigate("/signup")}>Get Started</Button>
+          <div className="space-y-3">
+            <Button className="w-full h-12" onClick={() => navigate("/signup")}>Get Started</Button>
+            <Button variant="outline" className="w-full h-12" onClick={() => navigate("/")}>Back to Home</Button>
+          </div>
         )}
       </div>
     </div>
