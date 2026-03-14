@@ -1,4 +1,4 @@
-import { Home, Search, Plus, Bell, User } from "lucide-react";
+import { LayoutDashboard, Search, Plus, Bell, User } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
