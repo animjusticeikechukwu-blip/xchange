@@ -175,34 +175,63 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden min-h-[85vh] flex items-center">
         <div className="absolute inset-0">
           <img src={dashboardHero} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+          <div className="absolute inset-0 bg-primary/80" />
         </div>
-        <div className="relative max-w-6xl mx-auto px-4 md:px-8 pt-16 pb-20 md:pt-24 md:pb-28">
-          <div className="max-w-2xl">
+        <div className="relative max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24 w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-6">
+              {/* Logo + App Name */}
+              <div className="flex items-center gap-3 mb-8">
+                <img src={xchangeLogo} alt="Xchange" className="h-12 md:h-14 object-contain brightness-[10]" />
+              </div>
+
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-foreground/15 text-primary-foreground text-xs font-semibold mb-6">
                 <ShieldCheck className="h-3.5 w-3.5" /> For Licensed Healthcare Facilities in Nigeria
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] tracking-tight">
                 Recover value.<br />Reduce waste.
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mt-5 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-primary-foreground/80 mt-5 leading-relaxed max-w-xl">
                 The B2B marketplace where pharmacies and hospitals list, discover, and purchase medicines approaching expiry — before they become losses.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mt-8">
-                <Button size="lg" className="h-13 px-8 text-base" onClick={() => navigate("/signup")}>
+                <Button variant="secondary" size="lg" className="h-13 px-8 text-base font-semibold" onClick={() => navigate("/signup")}>
                   Start Listing Free <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="lg" className="h-13 px-8 text-base" onClick={() => navigate("/search")}>
+                <Button variant="outline" size="lg" className="h-13 px-8 text-base border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" onClick={() => navigate("/search")}>
                   Browse Medicines
                 </Button>
+              </div>
+            </motion.div>
+
+            {/* Right side — key stats overlay */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="hidden md:block"
+            >
+              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 p-8 space-y-6">
+                <h3 className="text-lg font-bold text-primary-foreground">Trusted by facilities across Nigeria</h3>
+                <div className="grid grid-cols-2 gap-6">
+                  {stats.map((stat) => (
+                    <div key={stat.label}>
+                      <p className="text-2xl font-bold text-primary-foreground font-mono-data">{stat.value}</p>
+                      <p className="text-xs text-primary-foreground/60 mt-0.5">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center gap-2 pt-2 border-t border-primary-foreground/15">
+                  <img src={verifiedBadge} alt="" className="w-5 h-5 brightness-[10] opacity-70" />
+                  <p className="text-xs text-primary-foreground/70">All facilities are license-verified</p>
+                </div>
               </div>
             </motion.div>
           </div>
