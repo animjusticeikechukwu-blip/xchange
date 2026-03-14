@@ -358,11 +358,7 @@ const LandingPage = () => {
             </motion.div>
           ))}
         </div>
-        <div className="grid grid-cols-3 gap-6 mt-12 max-w-lg mx-auto">
-          <img src={onboardingRecover} alt="List stock" className="w-full aspect-square object-contain" />
-          <img src={onboardingReduce} alt="Reduce waste" className="w-full aspect-square object-contain" />
-          <img src={onboardingDiscover} alt="Discover" className="w-full aspect-square object-contain" />
-        </div>
+      </section>
       </section>
 
       {/* Featured Medicines */}
