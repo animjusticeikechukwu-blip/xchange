@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search as SearchIcon, SlidersHorizontal, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BottomNav } from "@/components/BottomNav";
+import { AppLayout } from "@/components/AppLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { MedicineCard } from "@/components/MedicineCard";
 import { sampleMedicines } from "@/data/sample-data";
@@ -26,11 +26,11 @@ const SearchPage = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <AppLayout>
       <PageHeader title="Search Medicines" />
 
-      <div className="max-w-lg mx-auto px-4 pt-4 space-y-4">
-        <div className="relative">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 pt-4 space-y-4">
+        <div className="relative max-w-xl">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <input
             type="text"
@@ -70,7 +70,7 @@ const SearchPage = () => {
         </AnimatePresence>
 
         <p className="text-xs text-muted-foreground">{sorted.length} results</p>
-        <div className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {sorted.map((med, i) => (
             <MedicineCard key={med.id} medicine={med} index={i} />
           ))}
@@ -84,9 +84,7 @@ const SearchPage = () => {
           </div>
         )}
       </div>
-
-      <BottomNav />
-    </div>
+    </AppLayout>
   );
 };
 
