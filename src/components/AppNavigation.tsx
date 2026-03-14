@@ -41,7 +41,7 @@ export function DesktopSidebar() {
         {navItems.map((item) => {
           const isActive =
             location.pathname === item.path ||
-            (item.path !== "/dashboard" && location.pathname.startsWith(item.path));
+            (item.path !== "/" && item.path !== "/dashboard" && location.pathname.startsWith(item.path));
           return (
             <motion.button
               key={item.path}
