@@ -21,9 +21,6 @@ import { useState } from "react";
 import xchangeLogo from "@/assets/xchange-logo.png";
 import pharmacyInterior from "@/assets/pharmacy-interior.jpg";
 import verifiedBadge from "@/assets/verified-badge.png";
-import onboardingRecover from "@/assets/onboarding-recover.png";
-import onboardingReduce from "@/assets/onboarding-reduce.png";
-import onboardingDiscover from "@/assets/onboarding-discover.png";
 import stepList from "@/assets/step-list.jpg";
 import stepDiscover from "@/assets/step-discover.jpg";
 import stepSecure from "@/assets/step-secure.jpg";
@@ -360,11 +357,6 @@ const LandingPage = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-        <div className="grid grid-cols-3 gap-6 mt-12 max-w-lg mx-auto">
-          <img src={onboardingRecover} alt="List stock" className="w-full aspect-square object-contain" />
-          <img src={onboardingReduce} alt="Reduce waste" className="w-full aspect-square object-contain" />
-          <img src={onboardingDiscover} alt="Discover" className="w-full aspect-square object-contain" />
         </div>
       </section>
 
