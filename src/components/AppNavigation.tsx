@@ -49,11 +49,9 @@ export function DesktopSidebar() {
               onClick={() => navigate(item.path)}
               className={cn(
                 "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all tap-highlight",
-                item.isAction
-                  ? "bg-primary text-primary-foreground mt-2 mb-2 shadow-card hover:opacity-90"
-                  : isActive
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                isActive
+                  ? "bg-primary/10 text-primary"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}
             >
               <item.icon className="h-5 w-5 shrink-0" />
