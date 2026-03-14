@@ -24,6 +24,21 @@ import verifiedBadge from "@/assets/verified-badge.png";
 import onboardingRecover from "@/assets/onboarding-recover.png";
 import onboardingReduce from "@/assets/onboarding-reduce.png";
 import onboardingDiscover from "@/assets/onboarding-discover.png";
+import medAmoxicillin from "@/assets/med-amoxicillin.jpg";
+import medMetformin from "@/assets/med-metformin.jpg";
+import medCiprofloxacin from "@/assets/med-ciprofloxacin.jpg";
+import medCoartem from "@/assets/med-coartem.jpg";
+import medParacetamol from "@/assets/med-paracetamol.jpg";
+import medOmeprazole from "@/assets/med-omeprazole.jpg";
+
+const featuredMedicines = [
+  { name: "Amoxicillin", brand: "Beecham", price: "₦8,500", discount: "43%", daysLeft: 37, image: medAmoxicillin, location: "Lekki, Lagos" },
+  { name: "Metformin 500mg", brand: "Glucophage", price: "₦4,200", discount: "46%", daysLeft: 62, image: medMetformin, location: "Ikeja, Lagos" },
+  { name: "Ciprofloxacin 500mg", brand: "Cipro", price: "₦3,200", discount: "51%", daysLeft: 18, image: medCiprofloxacin, location: "V.I., Lagos" },
+  { name: "Artemether/Lumefantrine", brand: "Coartem", price: "₦12,000", discount: "45%", daysLeft: 14, image: medCoartem, location: "Yaba, Lagos" },
+  { name: "Paracetamol 500mg", brand: "Emzor", price: "₦3,500", discount: "30%", daysLeft: 159, image: medParacetamol, location: "Lekki, Lagos" },
+  { name: "Omeprazole 20mg", brand: "Losec", price: "₦6,000", discount: "35%", daysLeft: 108, image: medOmeprazole, location: "Surulere, Lagos" },
+];
 
 const stats = [
   { value: "2,500+", label: "Licensed Facilities" },
@@ -170,7 +185,7 @@ const LandingPage = () => {
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-4 md:px-8">
           <button onClick={() => navigate("/")} className="tap-highlight">
-            <img src={xchangeLogo} alt="Xchange" className="h-7 object-contain" />
+            <img src={xchangeLogo} alt="Xchange" className="h-9 md:h-10 object-contain" />
           </button>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             <button onClick={() => scrollTo("how-it-works")} className="hover:text-foreground transition-colors">How It Works</button>
@@ -227,7 +242,7 @@ const LandingPage = () => {
               transition={{ duration: 0.4 }}
             >
               <div className="flex items-center gap-3 mb-8">
-                <img src={xchangeLogo} alt="Xchange" className="h-12 md:h-14 object-contain brightness-[10]" />
+                <img src={xchangeLogo} alt="Xchange" className="h-16 md:h-20 object-contain brightness-[10]" />
               </div>
 
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-foreground/15 text-primary-foreground text-xs font-semibold mb-6">
@@ -321,10 +336,59 @@ const LandingPage = () => {
             </motion.div>
           ))}
         </div>
-        <div className="grid grid-cols-3 gap-4 mt-12 max-w-md mx-auto">
-          <img src={onboardingRecover} alt="List stock" className="w-full aspect-square object-contain opacity-80" />
-          <img src={onboardingReduce} alt="Reduce waste" className="w-full aspect-square object-contain opacity-80" />
-          <img src={onboardingDiscover} alt="Discover" className="w-full aspect-square object-contain opacity-80" />
+        <div className="grid grid-cols-3 gap-6 mt-12 max-w-lg mx-auto">
+          <img src={onboardingRecover} alt="List stock" className="w-full aspect-square object-contain" />
+          <img src={onboardingReduce} alt="Reduce waste" className="w-full aspect-square object-contain" />
+          <img src={onboardingDiscover} alt="Discover" className="w-full aspect-square object-contain" />
+        </div>
+      </section>
+
+      {/* Featured Medicines */}
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Medicines Available Now</h2>
+          <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Browse verified, discounted medicines from licensed facilities. New listings added daily.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          {featuredMedicines.map((med, i) => (
+            <motion.div
+              key={med.name}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06 }}
+              onClick={() => navigate("/dashboard")}
+              className="rounded-xl bg-card shadow-card overflow-hidden cursor-pointer hover:shadow-elevated transition-shadow"
+            >
+              <div className="relative h-36 md:h-44 bg-muted">
+                <img src={med.image} alt={med.name} className="w-full h-full object-cover" loading="lazy" />
+                <span className={`absolute top-2 right-2 px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                  med.daysLeft <= 30 ? "bg-destructive text-destructive-foreground" : med.daysLeft <= 90 ? "bg-accent text-accent-foreground" : "bg-primary text-primary-foreground"
+                }`}>
+                  {med.daysLeft}d left
+                </span>
+                <span className="absolute top-2 left-2 bg-card/90 backdrop-blur-sm rounded-full px-2 py-0.5 text-[10px] font-bold text-primary">
+                  -{med.discount}
+                </span>
+              </div>
+              <div className="p-3.5">
+                <h4 className="font-semibold text-sm text-card-foreground truncate">{med.name}</h4>
+                <p className="text-xs text-muted-foreground">{med.brand}</p>
+                <div className="flex items-center justify-between mt-2">
+                  <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                    <MapPin className="h-3 w-3" />
+                    <span>{med.location}</span>
+                  </div>
+                  <p className="font-bold text-sm text-card-foreground font-mono-data">{med.price}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Button size="lg" onClick={() => navigate("/dashboard")} className="h-12 px-8">
+            View All Medicines <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </section>
 
