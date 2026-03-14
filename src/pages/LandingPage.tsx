@@ -251,8 +251,8 @@ const LandingPage = () => {
           <img src={pharmacyInterior} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-primary/80" />
         </div>
-        <div className="relative max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24 w-full">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-16 w-full">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
