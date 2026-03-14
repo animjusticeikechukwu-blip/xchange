@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ChevronRight, Building2, MapPin, Shield, Lock, CreditCard, LogOut, FileText, HelpCircle, History } from "lucide-react";
 import { BottomNav } from "@/components/BottomNav";
 import { PageHeader } from "@/components/PageHeader";
+import verifiedBadge from "@/assets/verified-badge.png";
 
 const menuItems = [
   { icon: Building2, label: "Facility Info", path: "/facility-info", desc: "MedPlus Pharmacy · Lekki, Lagos" },
@@ -27,15 +28,15 @@ const ProfilePage = () => {
             <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
               <span className="text-xl font-bold text-primary">MP</span>
             </div>
-            <div>
+            <div className="flex-1">
               <h2 className="font-bold text-card-foreground">MedPlus Pharmacy</h2>
               <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
                 <MapPin className="h-3 w-3" />
                 <span>Lekki, Lagos</span>
               </div>
-              <div className="flex items-center gap-1 text-xs text-expiry-safe mt-0.5">
-                <Shield className="h-3 w-3" />
-                <span>Verified Facility</span>
+              <div className="flex items-center gap-1.5 mt-1">
+                <img src={verifiedBadge} alt="Verified" className="w-4 h-4 object-contain" />
+                <span className="text-xs font-medium text-expiry-safe">Verified Facility</span>
               </div>
             </div>
           </div>

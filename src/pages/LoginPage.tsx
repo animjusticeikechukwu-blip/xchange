@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PageHeader } from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
+import xchangeLogo from "@/assets/xchange-logo.png";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const LoginPage = () => {
       <PageHeader title="Log In" showBack />
       <div className="max-w-lg mx-auto px-4 pt-8 space-y-6">
         <div className="text-center">
+          <img src={xchangeLogo} alt="Xchange" className="h-10 mx-auto mb-4 object-contain" />
           <h2 className="text-2xl font-bold text-foreground">Welcome back</h2>
           <p className="text-sm text-muted-foreground mt-1">Sign in to your facility account</p>
         </div>

@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { BottomNav } from "@/components/BottomNav";
 import { MedicineCard } from "@/components/MedicineCard";
 import { sampleMedicines, sampleNotifications, formatNaira } from "@/data/sample-data";
+import dashboardHero from "@/assets/dashboard-hero.jpg";
+import xchangeLogo from "@/assets/xchange-logo.png";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -13,14 +15,19 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      {/* Header */}
-      <header className="bg-primary text-primary-foreground px-4 pt-12 pb-6">
-        <div className="max-w-lg mx-auto">
-          <p className="text-sm opacity-80">Good morning</p>
-          <h1 className="text-2xl font-bold mt-1">MedPlus Pharmacy</h1>
-          {unreadNotifs > 0 && (
-            <p className="text-sm opacity-80 mt-1">{unreadNotifs} new alerts</p>
-          )}
+      {/* Header with hero image */}
+      <header className="relative overflow-hidden">
+        <img src={dashboardHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-primary/85" />
+        <div className="relative text-primary-foreground px-4 pt-10 pb-8">
+          <div className="max-w-lg mx-auto">
+            <img src={xchangeLogo} alt="Xchange" className="h-6 mb-4 brightness-[10] object-contain" />
+            <p className="text-sm opacity-80">Good morning</p>
+            <h1 className="text-2xl font-bold mt-1">MedPlus Pharmacy</h1>
+            {unreadNotifs > 0 && (
+              <p className="text-sm opacity-80 mt-1">{unreadNotifs} new alerts</p>
+            )}
+          </div>
         </div>
       </header>
 
