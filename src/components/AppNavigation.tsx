@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import xchangeLogo from "@/assets/xchange-logo.png";
 
 const navItems = [
+  { icon: Home, label: "Home", path: "/" },
   { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
   { icon: Search, label: "Search", path: "/search" },
   { icon: Plus, label: "New Listing", path: "/new-listing", isAction: true },
@@ -73,13 +74,6 @@ export function DesktopSidebar() {
         >
           <HelpCircle className="h-5 w-5 shrink-0" />
           <span>Help & Support</span>
-        </button>
-        <button
-          onClick={() => navigate("/")}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-        >
-          <Home className="h-5 w-5 shrink-0" />
-          <span>Home</span>
         </button>
       </div>
     </aside>
